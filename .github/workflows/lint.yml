@@ -1,0 +1,39 @@
+# .github/workflows/lint.yml
+
+name: Arduino Lint Check
+
+# Define los eventos que disparan esta acción (workflow)
+on:
+  push:
+    # Ejecutar la verificación cuando se suben cambios a las ramas principales
+    branches: [ main, develop ] 
+  pull_request:
+    # Ejecutar la verificación cuando se crea un Pull Request dirigido a estas ramas
+    branches: [ main, develop ] 
+  # También puedes añadir un 'workflow_dispatch' para ejecutarlo manualmente desde GitHub
+  # workflow_dispatch:
+
+# Define la serie de trabajos (jobs) que se ejecutarán
+jobs:
+  lint:
+    # El trabajo se ejecuta en una máquina virtual Linux
+    runs-on: ubuntu-latest
+
+    # Pasos del trabajo 'lint'
+    steps:
+    - name: Checkout repository
+      # Obtiene la copia del código de tu repositorio
+      uses: actions/checkout@v4
+      
+    - name: Run Arduino Lint
+      # Llama a la acción oficial de Arduino para verificar el cumplimiento
+      uses: arduino/arduino-lint-action@v1
+      with:
+        # Configura el lint para verificar específicamente la arquitectura ESP8266
+        # Si expandes a ESP32, puedes cambiar esto a 'esp8266, esp32'
+        architectures: esp8266
+        
+    - name: Success message
+      # Paso que se ejecutará si el lint pasa sin errores
+      if: success()
+      run: echo "✅ Arduino Lint passed! Your library is compliant with ESP8266 standards."
