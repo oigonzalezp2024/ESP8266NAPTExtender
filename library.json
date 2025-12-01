@@ -1,0 +1,35 @@
+{
+  "name": "ESP8266NAPTExtender",
+  "version": "1.0.0",
+  "keywords": "wifi,wi-fi,esp,esp8266,esp-napt,nat,router,range extender,ap,sta,lwip",
+  "description": "Converts an ESP8266 into a NAPT (NAT) Range Extender.",
+  "authors": [
+    {
+      "name": "Oscar Gonzalez",
+      "email": "oigonzalezp2024@gmail.com",
+      "url": "https://github.com/oigonzalezp2024",
+      "maintainer": true
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/oigonzalezp2024/ESP8266NAPTExtender.git"
+  },
+  "frameworks": "arduino",
+  "platforms": [
+    "espressif8266"
+  ],
+  "dependencies": [
+    {
+      "name": "ESP8266WiFi"
+    },
+    {
+      "name": "lwip"
+    }
+  ],
+  "export": {
+    "include": [
+      "src"
+    ]
+  }
+}
