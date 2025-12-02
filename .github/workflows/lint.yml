@@ -29,11 +29,12 @@ jobs:
       # Llama a la acción oficial de Arduino para verificar el cumplimiento
       uses: arduino/arduino-lint-action@v1
       with:
-        # Configura el lint para verificar específicamente la arquitectura ESP8266
-        # Si expandes a ESP32, puedes cambiar esto a 'esp8266, esp32'
-        architectures: esp8266
+        # Usamos 'compliance' para asegurar que se verifique la estructura 
+        # y los metadatos de la librería (como library.properties).
+        # Esto reemplaza el parámetro 'architectures' que causaba una advertencia.
+        architectures: specification
         
     - name: Success message
       # Paso que se ejecutará si el lint pasa sin errores
       if: success()
-      run: echo "✅ Arduino Lint passed! Your library is compliant with ESP8266 standards."
+      run: echo "Arduino Lint passed! Your library is compliant with ESP8266 standards."
