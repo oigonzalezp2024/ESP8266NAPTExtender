@@ -25,7 +25,7 @@ jobs:
       # Obtiene la copia del código de tu repositorio
       uses: actions/checkout@v4
       
-    - name: Run Arduino Lint (Update Check)
+    - name: Run Arduino Lint (Update Check 2)
       # Llama a la acción oficial de Arduino para verificar el cumplimiento
       uses: arduino/arduino-lint-action@v1
       with:
