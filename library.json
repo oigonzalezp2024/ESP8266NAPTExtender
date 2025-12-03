@@ -1,6 +1,6 @@
 {
-  "name": "ESP8266 NAPT Extender",
-  "version": "1.0.6",
+  "name": "ESP8266NAPTExtender",
+  "version": "1.0.7",
   "keywords": "wifi,wi-fi,esp,esp8266,esp-napt,nat,router,range extender,ap,sta,lwip, ESP8266NAPTExtender, ESP8266 NAPT Extender",
   "description": "Converts an ESP8266 into a NAPT (NAT) Range Extender.",
   "authors": [
