@@ -29,7 +29,8 @@ jobs:
       # Llama a la acción oficial de Arduino para verificar el cumplimiento
       uses: arduino/arduino-lint-action@v1
       with:
-        args: "--compliance specification --project-type all --library-manager update"
+        compliance: specification
+        library-manager: update
         
     - name: Success message
       # Paso que se ejecutará si el lint pasa sin errores
